@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dear Pimmu 💗</title>
+
+<style>
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family:Georgia,serif;
+  background:linear-gradient(135deg,#ffd6e7,#fff0f5,#ffc0cb);
+  color:#8b1645;
+  text-align:center;
+}
+.container {
+  max-width:480px;
+  margin:30px auto;
+  padding:22px;
+}
+.card {
+  background:#fffafc;
+  padding:28px 20px;
+  border-radius:25px;
+  box-shadow:0 8px 25px #d66b9270;
+  margin-bottom:20px;
+}
+h1 { color:#d63375; }
+h2 { color:#b52b65; }
+button {
+  background:#e83e80;
+  color:white;
+  border:0;
+  padding:13px 22px;
+  border-radius:30px;
+  font-size:16px;
+  margin:10px 5px;
+  cursor:pointer;
+}
+button:hover { background:#ad1756; }
+input[type="text"] {
+  padding:12px;
+  width:90%;
+  border:1px solid pink;
+  border-radius:12px;
+  margin:10px;
+}
+.hidden { display:none; }
+.heart { font-size:35px; animation:beat 1s infinite; }
+@keyframes beat {
+  50% { transform:scale(1.25); }
+}
+.question {
+  background:#ffe5ef;
+  padding:15px;
+  border-radius:15px;
+  margin:15px 0;
+}
+.letter {
+  background:#fff0c9;
+  padding:22px;
+  border:2px dashed #d58b37;
+  border-radius:15px;
+  color:#70431e;
+  line-height:1.8;
+}
+.promise {
+  text-align:left;
+  line-height:2;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- WELCOME -->
+<div class="card" id="welcome">
+  <div class="heart">💗💗💗</div>
+  <h1>Aaiye Dear Pimmu!</h1>
+  <h2>Prince Nayub 👑</h2>
+  <p>Tum mere sabse khaas person ho.</p>
+  <p>Ye chhota sa virtual card sirf tumhare liye hai!</p>
+  <p>Ready ho ek special surprise ke liye? 🥹</p>
+  <button onclick="show('quiz')">Let's Start 💌</button>
+</div>
+
+<!-- QUIZ -->
+<div class="card hidden" id="quiz">
+<h1>💗 Special Quiz 💗</h1>
+<p>Chalo dekhte hain Prince Nayub ko Nayab kitni pasand hai!</p>
+
+<div class="question">
+<h3>1. Prince Nayub, tumhe Nayab kitni pasand hai?</h3>
+<button onclick="answer('Bahut zyada ❤️')">Bahut zyada ❤️</button>
+<button onclick="answer('Duniya se bhi zyada 🥹')">Duniya se bhi zyada 🥹</button>
+<button onclick="answer('Words mein nahi bata sakta 💗')">Words mein nahi bata sakta 💗</button>
+</div>
+
+<div class="question">
+<h3>2. Kya tum Nayab se shaadi karna chahoge?</h3>
+<button onclick="answer('Yes, future mein 💍')">Yes 💍</button>
+<button onclick="answer('Pehle family ko manana hai 😅')">Pehle family ko manana hai 😅</button>
+<button onclick="answer('Abhi sochna padega 😂')">Sochna padega 😂</button>
+</div>
+
+<div class="question">
+<h3>3. Nayab tumhare liye kya hai?</h3>
+<button onclick="answer('My special person 💕')">My special person 💕</button>
+<button onclick="answer('My happiness 🥰')">My happiness 🥰</button>
+<button onclick="answer('My favourite girl 👑')">My favourite girl 👑</button>
+</div>
+
+<div class="question">
+<h3>4. Nayab se pyaar kab hua?</h3>
+<button onclick="answer('Pehli mulaqat mein ❤️')">Pehli mulaqat mein ❤️</button>
+<button onclick="answer('Dheere dheere 🥹')">Dheere dheere 🥹</button>
+<button onclick="answer('Jab samjha ki woh special hai 💗')">Jab samjha 💗</button>
+</div>
+
+<p id="response"></p>
+<button onclick="show('letter')">Next Surprise 💌</button>
+</div>
+
+<!-- LETTER -->
+<div class="card hidden" id="letter">
+<h1>💌 A Special Letter</h1>
+<div class="letter">
+<p>Dear Prince Nayub 👑,</p>
+
+<p>Tum meri life ke ek bahut special person ho.
+Tumhari smile, tumhari baatein aur tumhara saath mere liye bahut important hai.</p>
+
+<p>Aaj tumhare liye ek chhota sa surprise hai...</p>
+
+<h2>🌹 Will You Marry Me? 🌹</h2>
+
+<p>From your special girl,</p>
+<h2>Nayab 💗</h2>
+</div>
+
+<button onclick="show('proposal')">Open Your Answer 💍</button>
+</div>
+
+<!-- PROPOSAL -->
+<div class="card hidden" id="proposal">
+<div class="heart">💍🌹</div>
+<h1>Prince, Will You Marry Me?</h1>
+<p>Future mein Nayab ke saath apni beautiful story likhna chahoge?</p>
+<button onclick="proposalAnswer('YESSS! 💗')">YESSS! 💗</button>
+<button onclick="proposalAnswer('Pehle sochunga 😂')">Let me think 😂</button>
+<h2 id="proposalResult"></h2>
+<button onclick="show('agreement')">Next: Our Agreement 📜</button>
+</div>
+
+<!-- AGREEMENT -->
+<div class="card hidden" id="agreement">
+<h1>📜 Special Agreement</h1>
+<p>Prince Nayub & Nayab</p>
+
+<div class="letter promise">
+<h3>Our Cute Promises 💗</h3>
+<p>1. Hum ek dusre ki respect karenge.</p>
+<p>2. Ek dusre ka saath aur trust banaye rakhenge.</p>
+<p>3. Kabhi jaan-boojhkar ek dusre ko hurt nahi karenge.</p>
+<p>4. Har situation mein honestly baat karenge.</p>
+<p>5. Future mein saath rahe toh ek dusre ka support banenge.</p>
+<p>6. Chor-Police ka game hamesha khelenge 😂</p>
+<p>7. Nayab hamesha Prince Nayub ki special person rahegi! 👑</p>
+</div>
+
+<p><b>Do you agree with these promises?</b></p>
+<label><input type="checkbox" id="agree"> I happily agree 💗</label>
+<br>
+<input type="text" id="signature" placeholder="Sign here: Prince Nayub">
+<br>
+<button onclick="signAgreement()">Sign Our Agreement ✍️</button>
+<p id="signed"></p>
+<button onclick="show('game')">Let's Play a Game 🎮</button>
+</div>
+
+<!-- GAME -->
+<div class="card hidden" id="game">
+<h1>🚔 Chor Police Game 😂</h1>
+<p>Prince Nayub aur Nayab ka special game!</p>
+<div class="heart">🚔 💨 🏃</div>
+<h2 id="gameQuestion">Kaun banega Chor?</h2>
+<button onclick="play('Nayab Chor bani! 😂')">Nayab Chor</button>
+<button onclick="play('Prince Nayub Chor bane! 🤣')">Prince Nayub Chor</button>
+<p id="gameResult"></p>
+<button onclick="play('Police ne chor pakad liya! 🚔')">Catch the Chor 🚔</button>
+<button onclick="play('Chor bhaag gaya! 😂')">Chor Bhaag Gaya 🏃</button>
+<button onclick="show('final')">Finish 💗</button>
+</div>
+
+<!-- END -->
+<div class="card hidden" id="final">
+<div class="heart">💗👑💗</div>
+<h1>Our Little Story</h1>
+<h2>Prince Nayub & Nayab</h2>
+<p>Some people are special, and some become unforgettable.</p>
+<p>Thank you for opening this little surprise, Dear Pimmu!</p>
+<h1>THE END? NO! 💕</h1>
+<p>To be continued... ♾️</p>
+<button onclick="show('welcome')">Read Again 🔄</button>
+</div>
+
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.card').forEach(c=>{
+    c.classList.add('hidden');
+  });
+  document.getElementById(id).classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+
+function answer(text) {
+  document.getElementById('response').innerHTML =
+  "Your answer: <b>"+text+"</b> 💗";
+}
+
+function proposalAnswer(text) {
+  document.getElementById('proposalResult').innerHTML =
+  "Your answer: "+text+" 🥹💕";
+}
+
+function signAgreement() {
+  let check=document.getElementById('agree').checked;
+  let name=document.getElementById('signature').value;
+
+  if(!check || name.trim()==="") {
+    alert("Please agree and write your signature! 💗");
+    return;
+  }
+
+  document.getElementById('signed').innerHTML =
+  "💗 Agreement signed by "+name+
+  "<br> NAYAB & PRINCE NAYUB 👑<br>Our special promises are saved in this moment! 🌹";
+}
+
+function play(text) {
+  document.getElementById('gameResult').innerHTML=text;
+}
+</script>
+</body>
+</html>
